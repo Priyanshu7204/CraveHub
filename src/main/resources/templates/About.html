@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Us | CraveHub</title>
+	
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/About.css}" />
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div class="about-hero">
+		<div class="overlay"></div>
+		<div class="hero-content animate-up">
+			<h1>Our <span style="color: crimson;">Story</span></h1>
+			<p>From a small kitchen to your favorite food delivery partner.</p>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<section class="story-section">
+			<div class="story-img animate-left delay-1">
+				<img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+					alt="Cooking">
+			</div>
+			<div class="story-text animate-right delay-1">
+				<h2>Who We Are?</h2>
+				<p>
+					**CraveHub** sirf ek food delivery app nahi, ek emotion hai. Humara safar 2019 mein ek chhote se
+					idea ke saath shuru hua tha—"Ghar jaisa khana, restaurant jaisi speed."
+				</p>
+				<p>
+					Aaj, hum thousands of customers ko unke pasandida meals deliver karte hain. Humara system smart hai,
+					staff passionate hai, aur khana... **bilkul lajawab!** 😋
+				</p>
+				<p>
+					Chahe aap late-night cravings se pareshan ho ya office lunch ki jaldi ho, CraveHub hamesha aapke
+					liye taiyar hai.
+				</p>
+			</div>
+		</section>
+
+		<section class="features">
+			<h2 class="section-title">Why Choose Us?</h2>
+			<div class="feature-grid">
+				<div class="feature-card animate-up delay-2">
+					<div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+					<h3>Super Fast</h3>
+					<p>30 minutes or free! Humari delivery lightning fast hai.</p>
+				</div>
+				<div class="feature-card animate-up delay-3">
+					<div class="icon-box"><i class="fa-solid fa-leaf"></i></div>
+					<h3>Fresh Food</h3>
+					<p>Farm fresh ingredients se bana healthy aur tasty khana.</p>
+				</div>
+				<div class="feature-card animate-up delay-4">
+					<div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+					<h3>Made with Love</h3>
+					<p>Har dish mein chefs ka pyaar aur hygiene ki guarantee.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="team">
+			<h2 class="section-title">Meet The Creators</h2>
+			<div class="team-grid">
+				<div class="team-member animate-up delay-2">
+					<img th:src="@{/Images/Developer/Idea.jpeg}" alt="Gagan, Mayank and Priyanshu" class="team-photo">
+					<h4>Gagan | Mayank | Priyanshu</h4>
+					<p>Founders & Developers</p>
+					<div class="socials">
+						<a href="https://www.linkedin.com/in/gagan-tiwari-756331245/"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="https://github.com/Anshu-Bhagat"><i class="fa-brands fa-github"></i></a>
+						<a href="https://www.instagram.com/manuzulation?igsh=dGpva2wwamJ5Y21i"><i class="fa-brands fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="memories-section">
+            <h2 class="section-title">Behind The Scenes</h2>
+            <p class="memories-subtitle">Some beautiful memories from our academic project development days!</p>
+            
+            <div class="memories-grid">
+    			<div class="memory-card"><img th:src="@{/Images/Developer/campus.jpeg}" alt="Campus Days"></div>
+   				<div class="memory-card"><img th:src="@{/Images/Developer/presentation.jpg}" alt="Project Presentation"></div>
+   				<div class="memory-card"><img th:src="@{/Images/Developer/testing.jpeg}" alt="Testing CraveHub"></div>
+   				<div class="memory-card"><img th:src="@{/Images/Developer/idea present.jpg}" alt="Idea Presentation"></div>
+   				<div class="memory-card"><img th:src="@{/Images/Developer/ducat.jpg}" alt="Learning at Ducat"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/db present.jpg}" alt="Database Presentation"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/funny traveling.jpg}" alt="Funny Traveling"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Idea.jpeg}" alt="Brainstorming Ideas"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/IMD.jpg}" alt="Fun Times"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Mayank.jpeg}" alt="Mayank"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Lab.jpg}" alt="Developer at work"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/IIT.jpeg}" alt="IIT Visit"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/IMD visit.jpeg}" alt="IMD Visit"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/industrial visit.jpeg}" alt="Industrial Visit"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Anshu SGU.jpeg}" alt="Anshu at SGU"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Tour.jpeg}" alt="College Tour"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Anshu IIT.jpeg}" alt="Anshu at IIT Delhi"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/college fun.jpeg}" alt="College Fun"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/IIT Anveshan.jpeg}" alt="IIT Anveshan Event"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/IIT Delhi.jpeg}" alt="IIT Delhi Campus"></div>
+    			<div class="memory-card"><img th:src="@{/Images/Developer/Project Submission.jpeg}" alt="Project Submission"></div>
+			</div>     
+        </section>
+
+	</div>
+
+	<footer class="footer">
+		<p>Made with ❤️ by CraveHub Team | © 2026</p>
+	</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Consistent Dark Theme Background matching the rest of the project */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Glassmorphism Card */
+.card {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px;
+}
+
+/* Header Section */
+.card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card-header h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Inputs & Textarea */
+input[type="text"],
+input[type="number"],
+textarea,
+.input-disabled {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: crimson;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.2);
+}
+
+/* Disabled Input (Product ID) */
+.input-disabled {
+    background: rgba(0, 0, 0, 0.3);
+    color: #888;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Buttons Container */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Buttons Common Style */
+.btn-update,
+.btn-cancel {
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Update Button (Primary) */
+.btn-update {
+    background: crimson;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+}
+
+.btn-update:hover {
+    background: #e60000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.5);
+}
+
+/* Cancel Button (Secondary) */
+.btn-cancel {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cancel:hover {
+    background: #333;
+    color: white;
+    border-color: #888;
+}

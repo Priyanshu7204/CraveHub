@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>ADMIN DASHBOARD | CraveHub</title>
+	
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<link rel="stylesheet" th:href="@{/css/Admin_Page.css}" />
+</head>
+
+<body>
+
+	<div class="sidebar">
+		<div class="sidebar-brand">
+			<i class="fa-solid fa-utensils"></i> CraveHub
+		</div>
+		<a href="#dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+		<a href="#charts-section"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+		<a href="#users"><i class="fa-solid fa-users"></i> Users</a>
+		<a href="#products"><i class="fa-solid fa-burger"></i> Menu Items</a>
+		<a href="#orders"><i class="fa-solid fa-clipboard-list"></i> Orders</a>
+	</div>
+
+	<div class="main-content">
+		
+		<div class="top-header" id="dashboard">
+			<h2><i class="fa-solid fa-hand-wave"></i> Welcome Admin!</h2>
+			<a class="logout-btn" th:href="@{/admin/logout}">
+				<i class="fa-solid fa-right-from-bracket"></i> Logout
+			</a>
+		</div>
+
+		<div class="dashboard-cards">
+			<div class="card">
+				<div class="card-info">
+					<h3 th:text="${users.size()}">0</h3> <p>Total Users</p>
+				</div>
+				<i class="fa-solid fa-users" style="color: #3498db;"></i>
+			</div>
+
+			<div class="card">
+				<div class="card-info">
+					<h3 th:text="${products.size()}">0</h3> <p>Menu Items</p>
+				</div>
+				<i class="fa-solid fa-burger" style="color: #f39c12;"></i>
+			</div>
+
+			<div class="card">
+				<div class="card-info">
+					<h3 th:text="${orders.size()}">0</h3> <p>Total Orders</p>
+				</div>
+				<i class="fa-solid fa-bag-shopping" style="color: #2ecc71;"></i>
+			</div>
+			
+			<div class="card" style="border-left-color: #9b59b6;">
+				<div class="card-info">
+					<h3 id="topSellingItem" style="font-size: 24px;">Loading...</h3> 
+					<p>Top Selling Item</p>
+				</div>
+				<i class="fa-solid fa-crown" style="color: #9b59b6;"></i>
+			</div>
+		</div>
+
+		<div class="charts-container" id="charts-section">
+			<div class="chart-box">
+				<h3><i class="fa-solid fa-chart-bar"></i> Daily Revenue Overview</h3>
+				<canvas id="revenueChart" height="100"></canvas>
+			</div>
+			<div class="chart-box" style="max-width: 400px;">
+				<h3><i class="fa-solid fa-chart-pie"></i> Order Status</h3>
+				<canvas id="statusChart"></canvas>
+			</div>
+		</div>
+
+		<div class="table-section" id="users">
+			<div class="table-header">
+				<h2><i class="fa-solid fa-users"></i> Registered Users</h2>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>S.No.</th> 
+						<th>Name</th>
+						<th>Email</th>
+						<th>Number</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user, stat :${users}">
+						<td th:text="${stat.count}"></td>
+						<td th:text="${user.uname}" style="font-weight: bold;"></td>
+						<td th:text="${user.uemail}"></td>
+						<td th:text="${user.unumber}"></td>
+						<td>
+							<span th:if="${user.active}" class="status-active">Active</span>
+							<span th:unless="${user.active}" class="status-blocked">Blocked</span>
+						</td>
+						<td>
+							<a th:href="@{'/admin/toggleUser/'+${user.u_id}}" 
+							   th:class="${user.active ? 'btn-manage btn-block' : 'btn-manage btn-unblock'}"
+							   th:text="${user.active ? 'Block' : 'Unblock'}">
+							</a>
+							<a th:href="@{'/deleteUser/'+${user.u_id}}" 
+							   onclick="return confirm('Delete this user permanently?')"
+							   style="color: #e74c3c; margin-left: 15px; font-size: 18px;">
+							   <i class="fa-solid fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="table-section" id="products">
+			<div class="table-header">
+				<h2><i class="fa-solid fa-utensils"></i> Menu Management</h2>
+				<a th:href="@{/addProduct}" class="add-btn"><i class="fa-solid fa-plus"></i> Add Product</a>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>S.No.</th> 
+						<th>Item Name</th>
+						<th>Price</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product, stat :${products}">
+						<td th:text="${stat.count}"></td>
+						<td th:text="${product.pname}" style="font-weight: bold; color: crimson;"></td>
+						<td th:text="'₹' + ${product.pprice}"></td>
+						<td>
+							<a style="color: #3498db; margin-right: 15px; font-size: 16px;" th:href="@{'/updateProduct/'+${product.pid}}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+							<a style="color: #e74c3c; font-size: 16px;" th:href="@{'/deleteProduct/'+${product.pid}}" onclick="return confirm('Delete this item?')"><i class="fa-solid fa-trash"></i> Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="table-section" id="orders">
+			<div class="table-header">
+				<h2><i class="fa-solid fa-clipboard-list"></i> Recent Orders</h2>
+			</div>
+			<table id="ordersTable">
+				<thead>
+					<tr>
+						<th>Customer</th>
+						<th>Item</th>
+						<th>Total</th>
+						<th>Date</th>
+						<th>Status</th>
+						<th>Update Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="order :${orders}">
+						<td th:text="${order.user.uname}" style="font-weight: bold;"></td>
+						<td th:text="${order.oName}"></td>
+						<td th:text="'₹' + ${order.totalAmmout}" style="color: #27ae60; font-weight: bold;"></td>
+						<td th:text="${#dates.format(order.orderDate, 'dd MMM yyyy')}"></td>
+						
+						<td>
+							<span th:class="${'status-badge ' + order.status.toLowerCase().replace(' ', '-')}" 
+								  th:text="${order.status}"></span>
+						</td>
+						
+						<td>
+							<form th:action="@{/admin/updateStatus}" method="post" style="display: flex; gap: 5px;">
+								<input type="hidden" name="orderId" th:value="${order.oId}">
+								<select name="newStatus">
+									<option value="Pending" th:selected="${order.status == 'Pending'}">Pending</option>
+									<option value="Preparing" th:selected="${order.status == 'Preparing'}">Preparing</option>
+									<option value="Out for Delivery" th:selected="${order.status == 'Out for Delivery'}">Out for Delivery</option>
+									<option value="Delivered" th:selected="${order.status == 'Delivered'}">Delivered</option>
+								</select>
+								<button type="submit" style="background: crimson; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+									<i class="fa-solid fa-check"></i>
+								</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<script th:src="@{/JavaScript/Admin_Dashboard.js}"></script>
+</body>
+</html>

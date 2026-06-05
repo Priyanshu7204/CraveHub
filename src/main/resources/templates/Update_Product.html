@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product | CraveHub</title>
+    
+    <link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" th:href="@{/css/Update_Product.css}" />
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Update Product</h3>
+                <p>Edit the details below to update the product.</p>
+            </div>
+
+            <form action="" th:action="@{'/updatingProduct/'+${product.pid}}" method="post" th:object="${product}">
+
+                <input type="hidden" name="pid" th:value="${product.pid}" />
+
+                <div class="form-group">
+                    <label>Product ID</label>
+                    <input type="text" class="input-disabled" th:value="${product.pid}" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" name="pname" th:value="${product.pname}" placeholder="Enter product name"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label>Price (₹)</label>
+                    <input type="number" name="pprice" th:value="${product.pprice}" placeholder="Enter price"
+                        required />
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="pdescription" th:text="${product.pdescription}" rows="4"
+                        placeholder="Enter product description"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <a th:href="@{/admin/services}" class="btn-cancel">Cancel</a>
+                    <button type="submit" class="btn-update">Update Product</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

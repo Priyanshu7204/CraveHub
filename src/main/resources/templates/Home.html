@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to CraveHub</title>
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Home.css}" />
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div class="hero-section">
+		<div class="overlay"></div>
+		<div class="content-container">
+			<h1 class="animate-text">✨ WELCOME TO <span class="highlight">CraveHub</span></h1>
+			<h3 class="animate-text delay-1">🍽️ Jahaan Taste Milta Hai Trust Se!</h3>
+			<p class="animate-text delay-2">
+				Explore karein hamara wide range of delicious dishes jo aapke meals ko banaye aur bhi special.
+				Fresh ingredients, behtareen swaad, aur superfast delivery.
+			</p>
+			<a href="/products" class="cta-button animate-text delay-3">Order Now <i
+					class="fa-solid fa-arrow-right"></i></a>
+		</div>
+	</div>
+
+	<div class="chatbot-wrapper">
+		<button class="chat-btn" onclick="toggleChat()">
+			<i class="fa-solid fa-robot"></i>
+		</button>
+
+		<div class="chat-window" id="chatWindow">
+			<div class="chat-header">
+				<div class="bot-info">
+					<i class="fa-solid fa-robot"></i>
+					<span>CraveHub Bot 🤖</span>
+				</div>
+				<button class="close-btn" onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+			</div>
+			<div class="chat-body" id="chatBody">
+				<div class="message bot-message">
+					<p>Hi! Main CraveHub AI hoon. Aaj kya khana pasand karenge? 🍔</p>
+				</div>
+			</div>
+			<div class="chat-footer">
+				<input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+				<button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+			</div>
+		</div>
+	</div>
+
+	<footer class="offer-ticker">
+		<div class="ticker-content">
+			🔥 FLAT 50% OFF on First Order &nbsp;|&nbsp; 🚀 30 Mins Superfast Delivery &nbsp;|&nbsp; 💳 No Cost EMI on
+			Orders above ₹500 &nbsp;|&nbsp; 🍲 Fresh & Hygienic Food Guaranteed!
+		</div>
+	</footer>
+
+	<script th:src="@{/JavaScript/chatbot.js}"></script>
+</body>
+
+</html>

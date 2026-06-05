@@ -1,0 +1,108 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Consistent Dark Theme Background */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+/* Glassmorphism Container */
+.otp-container {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.otp-container h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.otp-container p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* OTP Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 10px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: crimson;
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.2);
+}
+
+/* Verify Button */
+.btn-verify {
+    background: crimson;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-verify:hover {
+    background: #e60000;
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-verify:active {
+    transform: scale(0.98);
+}
+
+/* Error Message */
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Icon Styling */
+.mail-icon {
+    font-size: 50px;
+    color: crimson;
+    margin-bottom: 15px;
+}

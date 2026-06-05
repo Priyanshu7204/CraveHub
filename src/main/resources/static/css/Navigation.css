@@ -1,0 +1,167 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body,
+ul {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar container styling */
+nav {
+	background: rgba(20, 20, 20, 0.95);
+	backdrop-filter: blur(15px);
+	color: white;
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 40px;
+	gap: 20px;
+	z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid crimson;
+	transition: transform 0.5s ease;
+}
+
+/* Logo link container setup */
+.logo-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	text-decoration: none;
+	border-radius: 50%;
+	background: transparent;
+}
+
+.logo:hover {
+	transform: rotate(360deg) scale(1.1);
+	box-shadow: 0 0 15px rgba(220, 20, 60, 0.8);
+}
+
+/* Center search bar styling */
+.nav-center {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.search-form {
+	width: 100%;
+	max-width: 400px;
+}
+
+.search-box {
+	position: relative;
+	width: 100%;
+}
+
+.search-box input {
+	width: 100%;
+	padding: 10px 20px 10px 45px;
+	border-radius: 25px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.05);
+	color: white;
+	font-size: 14px;
+	outline: none;
+	transition: all 0.3s ease;
+}
+
+.search-box .search-icon {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #bbb;
+	transition: color 0.3s;
+}
+
+/* Search focus effect */
+.search-box input:focus {
+	border-color: crimson;
+	background: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+}
+
+.search-box input:focus + .search-icon {
+	color: crimson;
+}
+
+/* Navigation links */
+ul {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+
+li {
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: #e0e0e0;
+	font-weight: 500;
+	font-size: 16px;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: crimson;
+	text-shadow: 0 0 8px rgba(220, 20, 60, 0.6);
+}
+
+/* Making login button look like a normal link */
+.login-btn,
+button,
+.nav-links a {
+	background-color: transparent !important;
+	border: none !important;
+	color: white !important;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 10px 20px;
+}
+
+.login-btn:hover,
+.nav-links a:hover {
+	color: crimson !important;
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 768px) {
+	nav {
+		flex-direction: column;
+		padding: 15px;
+		gap: 15px;
+	}
+
+	.nav-center {
+		width: 100%;
+		order: 3;
+	}
+
+	ul {
+		width: 100%;
+		justify-content: space-around;
+		order: 2;
+	}
+
+	.search-form {
+		max-width: 100%;
+	}
+}

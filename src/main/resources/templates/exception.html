@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | CraveHub</title>
+    
+    <link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/Exception.css}">
+</head>
+<body>
+
+    <div class="error-container">
+        <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+        
+        <h1>Oops... Sorry!</h1>
+        <h3>Something went wrong.</h3>
+        
+        <div class="error-details">
+            <p><strong>Possible reasons:</strong></p>
+            <p>1. You are trying to add invalid or null data.</p>
+            <p>2. This email is already registered with us.</p>
+        </div>
+        
+        <div class="btn-group">
+            <a href="/home" class="btn btn-home"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+            <a href="https://www.google.com" target="_blank" class="btn btn-help"><i class="fa-solid fa-circle-question"></i> Help</a>
+        </div>
+    </div>
+
+</body>
+</html>

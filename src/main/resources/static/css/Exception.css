@@ -1,0 +1,111 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Glassmorphism Error Card */
+.error-container {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated Alert Icon */
+.error-icon {
+    font-size: 80px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+
+.error-container h1 {
+    color: crimson;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.error-container h3 {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Error Details Box */
+.error-details {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.error-details p {
+    color: #ffb3b3;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+/* Buttons Section */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-home {
+    background: crimson;
+    color: white;
+    border: 1px solid crimson;
+}
+
+.btn-home:hover {
+    background: #ff1a1a;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-help {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid #555;
+}
+
+.btn-help:hover {
+    background: #333;
+    color: white;
+}

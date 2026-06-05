@@ -1,0 +1,283 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(to bottom, rgba(15, 15, 15, 0.6), rgba(0, 0, 0, 0.9)),
+		url('../Images/Dark Salad.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* --- Container Centering --- */
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 80px);
+	/* Subtract nav height */
+}
+
+/* --- Glassmorphism Card --- */
+.login-wrapper {
+	display: flex;
+	width: 900px;
+	max-width: 95%;
+	background: rgba(20, 20, 20, 0.85);
+	/* Dark Glass */
+	backdrop-filter: blur(15px);
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	position: relative;
+}
+
+/* --- Sections (Admin & User) --- */
+.login-section {
+	flex: 1;
+	padding: 50px 40px;
+	text-align: center;
+	color: white;
+	transition: background 0.3s;
+}
+
+.login-section:hover {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+/* Headers */
+.header h2 {
+	font-size: 2rem;
+	margin: 10px 0 5px;
+	font-weight: 600;
+}
+
+.header p {
+	color: #aaa;
+	font-size: 0.9rem;
+	margin-bottom: 30px;
+}
+
+.icon-large {
+	font-size: 3rem;
+	margin-bottom: 10px;
+}
+
+.admin-section .icon-large {
+	color: #4caf50;
+}
+
+.user-section .icon-large {
+	color: crimson;
+}
+
+/* --- Input Fields --- */
+.input-box {
+	position: relative;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.input-box i {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #888;
+	transition: color 0.3s;
+}
+
+.input-box input {
+	width: 100%;
+	padding: 12px 15px 12px 45px;
+	/* Space for icon */
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 30px;
+	color: white;
+	font-size: 1rem;
+	outline: none;
+	transition: all 0.3s;
+	box-sizing: border-box;
+}
+
+.input-box input:focus {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: white;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.input-box input:focus+i {
+	color: white;
+}
+
+/* Specific Focus Colors */
+.admin-section .input-box input:focus {
+	border-color: #4caf50;
+}
+
+.user-section .input-box input:focus {
+	border-color: crimson;
+}
+
+/* --- Buttons --- */
+.btn {
+	width: 100%;
+	padding: 12px;
+	border: none;
+	border-radius: 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: white;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	margin-top: 10px;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.admin-btn {
+	background: linear-gradient(45deg, #43a047, #66bb6a);
+	box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.admin-btn:hover {
+	box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+}
+
+.user-btn {
+	background: linear-gradient(45deg, #d32f2f, #ef5350);
+	box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+}
+
+.user-btn:hover {
+	box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+}
+
+.btn i {
+	margin-left: 8px;
+}
+
+/* Google login button design */
+.google-btn {
+    background-color: #ffffff; 
+    color: #3c4043; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    border: 1px solid #dadce0; 
+    border-radius: 30px; /* Matched with other buttons */
+    padding: 12px; 
+    font-size: 1rem;
+    font-weight: 500; 
+    font-family: 'Poppins', sans-serif; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; 
+    width: 100%; 
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.google-btn:hover {
+    background-color: #f1f3f4;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.google-btn:active {
+	transform: scale(0.98);
+}
+
+/* --- Divider --- */
+.divider {
+	width: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.divider span {
+	background: #222;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: #888;
+	font-size: 0.8rem;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- Extras --- */
+.error-msg {
+	color: #ff4d4d;
+	font-size: 0.85rem;
+	display: block;
+	margin-bottom: 10px;
+	text-align: left;
+	margin-left: 15px;
+}
+
+.register-link {
+	margin-top: 20px;
+	font-size: 0.9rem;
+	color: #ccc;
+}
+
+.register-link a {
+	color: crimson;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.register-link a:hover {
+	text-decoration: underline;
+}
+
+/* --- Animations --- */
+.animate-up {
+	opacity: 0;
+	animation: fadeUp 0.8s forwards;
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	.login-wrapper {
+		flex-direction: column;
+		width: 90%;
+		margin: 20px 0;
+		height: auto;
+		overflow-y: auto;
+	}
+
+	.divider {
+		width: 100%;
+		height: 1px;
+		margin: 10px 0;
+	}
+
+	.main-container {
+		height: auto;
+		padding: 40px 0;
+	}
+}

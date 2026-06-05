@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add New Product | Admin</title>
+	<link rel="icon" type="image/x-icon" href="./Images/logo.png">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="" th:href="@{/css/Add_Product.css}" />
+</head>
+
+<body>
+	<a href="/admin/services" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+
+	<div class="main-container">
+		<div class="form-wrapper animate-up">
+			<div class="form-header">
+				<h2><i class="fa-solid fa-square-plus"></i> Add New Product</h2>
+				<p>Enter details to list a new item on the menu</p>
+			</div>
+
+			<form action="" th:action="@{/addingProduct}" method="post">
+
+				<div class="input-group">
+					<label><i class="fa-solid fa-tag"></i> Product Name</label>
+					<input type="text" name="pname" placeholder="e.g. Butter Chicken" required />
+				</div>
+
+				<div class="input-group">
+					<label><i class="fa-solid fa-indian-rupee-sign"></i> Price</label>
+					<input type="number" name="pprice" placeholder="e.g. 350" required />
+				</div>
+
+				<div class="input-group">
+					<label><i class="fa-solid fa-align-left"></i> Description</label>
+					<textarea name="pdescription" rows="4" placeholder="Describe the taste, ingredients, etc..."
+						required></textarea>
+				</div>
+
+				<button type="submit" class="submit-btn">
+					Launch Product <i class="fa-solid fa-rocket"></i>
+				</button>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>

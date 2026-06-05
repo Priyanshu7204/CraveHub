@@ -1,0 +1,229 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	background-color: #121212;
+	color: white;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: radial-gradient(circle at top right, #2a2a2a 0%, #121212 100%);
+}
+
+.payment-wrapper {
+	display: flex;
+	background: rgba(30, 30, 30, 0.6);
+	backdrop-filter: blur(15px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	padding: 40px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+	max-width: 900px;
+	width: 95%;
+	gap: 50px;
+	align-items: center;
+}
+
+/* --- Card Preview Section --- */
+.card-preview {
+	flex: 1;
+	perspective: 1000px;
+}
+
+.card-face {
+	background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+	/* Dark Metallic Look */
+	background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+	/* Texture */
+	border-radius: 15px;
+	padding: 25px;
+	color: white;
+	height: 220px;
+	position: relative;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chip img {
+	width: 50px;
+}
+
+.logo {
+	position: absolute;
+	top: 20px;
+	right: 25px;
+	font-size: 40px;
+}
+
+.card-number {
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 24px;
+	letter-spacing: 2px;
+	text-shadow: 0 2px 2px black;
+	margin-top: 40px;
+}
+
+.card-details {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Share Tech Mono', monospace;
+}
+
+/* --- Form Section --- */
+.payment-form {
+	flex: 1.2;
+}
+
+.payment-form h2 {
+	margin: 0;
+	color: white;
+}
+
+.payment-form p {
+	color: #aaa;
+	margin-bottom: 25px;
+	font-size: 0.9rem;
+}
+
+.input-group {
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.input-group label {
+	display: block;
+	font-size: 0.85rem;
+	color: #ccc;
+	margin-bottom: 5px;
+}
+
+.input-group input {
+	width: 100%;
+	padding: 12px 15px 12px 40px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid #444;
+	border-radius: 8px;
+	color: white;
+	font-size: 1rem;
+	outline: none;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+
+.input-group input:focus {
+	border-color: crimson;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.input-icon {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	color: #888;
+}
+
+.row {
+	display: flex;
+	gap: 15px;
+}
+
+.row .input-group {
+	flex: 1;
+}
+
+.pay-btn {
+	width: 100%;
+	padding: 15px;
+	margin-top: 10px;
+	background: crimson;
+	color: white;
+	border: none;
+	border-radius: 30px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s;
+	box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+}
+
+.pay-btn:hover {
+	background: #ff2e63;
+	transform: translateY(-2px);
+}
+
+/* --- Processing Overlay --- */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+	z-index: 2000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay.active {
+	display: flex;
+}
+
+.loader-box {
+	text-align: center;
+}
+
+.spinner {
+	width: 60px;
+	height: 60px;
+	border: 6px solid #333;
+	border-top: 6px solid crimson;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-up {
+	animation: slideUp 0.8s ease forwards;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.payment-wrapper {
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.card-preview {
+		width: 100%;
+	}
+}

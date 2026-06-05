@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register | CraveHub</title>
+	
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Register.css}" />
+</head>
+
+<body>
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div class="register-container">
+		<div class="register-box animate-up">
+			
+			<div class="header">
+				<h2>Create Account</h2>
+				<p>Join CraveHub to order delicious food</p>
+			</div>
+
+			<form th:action="@{/addingUser}" method="post" th:object="${userRegistration}">
+
+				<div class="input-box">
+					<i class="fa-solid fa-user"></i>
+					<input type="text" id="uname" name="uname" th:field="*{uname}" placeholder="Full Name" required>
+				</div>
+
+				<div class="input-box">
+					<i class="fa-solid fa-envelope"></i>
+					<input type="email" id="uemail" name="uemail" th:field="*{uemail}" placeholder="Email Address" required>
+				</div>
+
+				<div class="input-box">
+					<i class="fa-solid fa-phone"></i>
+					<input type="text" id="unumber" name="unumber" th:field="*{unumber}" placeholder="Phone Number" required>
+				</div>
+
+				<div class="input-box">
+					<i class="fa-solid fa-lock"></i>
+					<input type="password" id="upassword" name="upassword" th:field="*{upassword}" placeholder="Create Password" required>
+				</div>
+
+				<button type="submit" class="register-btn">Sign Up <i class="fa-solid fa-arrow-right"></i></button>
+			</form>
+
+			<p class="error-text" th:if="${error}" th:text="${error}"></p>
+
+			<div class="login-link">
+				<p>Already have an account? <a th:href="@{/login}">Login Here</a></p>
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+</html>

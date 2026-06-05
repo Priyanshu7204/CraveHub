@@ -1,0 +1,22 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse / STS 
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA & VS Code
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# MacOS
+.DS_Store

@@ -1,0 +1,71 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: sans-serif;
+}
+
+#mainDiv {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	/* 4 columns */
+	grid-gap: 20px;
+	padding: 30px;
+	justify-content: center;
+}
+
+.itemDiv {
+	border: 1px solid white;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* Semi-transparent black */
+	padding: 15px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+	width: 220px;
+	/* Fixed width for smaller boxes */
+	transition: transform 0.3s;
+}
+
+.itemDiv:hover {
+	transform: scale(1.05);
+	background-color: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.pImg {
+	width: 200px;
+	height: 150px;
+	border-radius: 5px;
+	object-fit: cover;
+}
+
+h3 {
+	margin: 10px 0;
+	font-size: 1.2rem;
+}
+
+.price {
+	font-size: 1.1rem;
+	color: gold;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+a {
+	border: 1px solid crimson;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	text-decoration: none;
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+a:hover {
+	background-color: darkred;
+	border-color: darkred;
+}

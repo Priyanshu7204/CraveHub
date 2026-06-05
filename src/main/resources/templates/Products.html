@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Our Products | CraveHub</title>
+	
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+	
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Products.css}" />
+</head>
+
+<body>
+	
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div id="mainDiv">
+	
+		<div class="itemDiv">
+			<img th:src="@{/Images/paneer/paneer-butter-masala.jpg}" alt="Paneer" class="pImg">
+			<h3>Butter Paneer</h3>
+			<p class="price">Price: 290/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/paneer/Kadai-Paneer.jpg}" alt="Kadai Paneer" class="pImg">
+			<h3>Kadai Paneer</h3>
+			<p class="price">Price: 270/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/paneer/paneer-do-pyaza.jpg}" alt="Paneer DO Pyaza" class="pImg">
+			<h3>Paneer Do Pyaza</h3>
+			<p class="price">Price: 240/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/biryani/veg-dum-biryani.jpeg}" alt="Veg. Biryani" class="pImg">
+			<h3>Veg. Biryani</h3>
+			<p class="price">Price: 120/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/biryani/kolkata biryani.jpg}" alt="Biryani" class="pImg">
+			<h3>Chicken Biryani</h3>
+			<p class="price">Price: 410/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+
+		<div class="itemDiv">
+			<img th:src="@{/Images/chicken/butter-chicken.jpg}" alt="Chicken" class="pImg">
+			<h3>Butter Chicken</h3>
+			<p class="price">Price: 380/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+
+		<div class="itemDiv">
+			<img th:src="@{/Images/chicken/Matka-Chicken.jpg}" alt="Chicken" class="pImg">
+			<h3>Matka Chicken</h3>
+			<p class="price">Price: 510/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+
+		<div class="itemDiv">
+			<img th:src="@{/Images/chicken/Tandoori-chicken-tikka.jpg}" alt="Chicken Tikka" class="pImg">
+			<h3>Chicken Tikka</h3>
+			<p class="price">Price: 310/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/Laccha-Paratha.jpg}" alt="Paratha" class="pImg">
+			<h3>Laccha Paratha</h3>
+			<p class="price">Price: 30/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/chola-bhatura.jpg}" alt="Chola Bhatura" class="pImg">
+			<h3>Chole Bhature</h3>
+			<p class="price">Price: 100/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/Soya-Chaap.jpg}" alt="Soya Chap" class="pImg">
+			<h3>Soya Chap</h3>
+			<p class="price">Price: 120/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/chinese/Fried-rice-manchurian.jpg}" alt="Fried Rice Manchurian" class="pImg">
+			<h3>Fried Rice Manchuriyan</h3>
+			<p class="price">Price: 150/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/Honey-Chilli-Potato.jpg}" alt="Chilli Potato" class="pImg">
+			<h3>Chilli Potato</h3>
+			<p class="price">Price: 150/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/chinese/chowmein.jpg}" alt="Chowmein" class="pImg">
+			<h3>Chowmein</h3>
+			<p class="price">Price: 120/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+		
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/Khir.jpg}" alt="Kheer" class="pImg">
+			<h3>Kheer</h3>
+			<p class="price">Price: 120/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+
+		<div class="itemDiv">
+			<img th:src="@{/Images/north-india-food/Gulab Jamun.jpg}" alt="Gulab Jamun" class="pImg">
+			<h3>Gulab Jamun</h3>
+			<p class="price">Price: 50/-</p>
+			<a href="/login">Buy Now</a>
+		</div>
+		
+	</div>
+</body>
+</html>

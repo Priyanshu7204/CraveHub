@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Locate Us | CraveHub</title>
+
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+	<link rel="stylesheet" th:href="@{/css/Locate_us.css}" />
+</head>
+
+<body>
+	
+	<nav th:replace="~{Navigation::navbar()}"></nav>
+
+	<div class="page-header">
+		<h1 class="animate-text">Find <span class="text-crimson">Us</span></h1>
+		<p class="animate-text delay-1">Visit our kitchen or contact us for support</p>
+	</div>
+
+	<section class="location-map animate-up delay-2">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.865961314959!2d77.49883581508323!3d28.663731182405465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf30b1b111111%3A0x1111111111111111!2sDasna%2C%20Ghaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
+			class="map-iframe" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+
+	<section class="contact-us">
+		<div class="row">
+
+			<div class="contact-col info-box animate-left delay-3">
+				<h2 class="text-crimson mb-20">Contact Details</h2>
+
+				<div class="info-item">
+					<i class="contact-icon fas fa-location-dot"></i>
+					<span>
+						<h5>1st Floor, HNSP, Shree Ram Colony, Dasna</h5>
+						<p>Ghaziabad, Uttar pradesh, India 201015</p>
+					</span>
+				</div>
+
+				<div class="info-item">
+					<i class="contact-icon fas fa-phone-volume"></i>
+					<span>
+						<h5>+91 9955807204</h5>
+						<p>Monday to Saturday, 10AM to 8PM</p>
+					</span>
+				</div>
+
+				<div class="info-item">
+					<i class="contact-icon fas fa-envelope-open-text"></i>
+					<span>
+						<h5>7204anshu@gmail.com</h5>
+						<p>Email us your query anytime</p>
+					</span>
+				</div>
+			</div>
+
+			<div class="contact-col form-box animate-right delay-3">
+				<h2 class="text-white mb-20">Get in Touch</h2>
+				<form action="#" method="post">
+					<div class="input-group">
+						<input type="text" name="name" required>
+						<label>Your Name</label>
+					</div>
+
+					<div class="input-group">
+						<input type="email" name="email" required>
+						<label>Email Address</label>
+					</div>
+
+					<div class="input-group">
+						<input type="text" name="subject" required>
+						<label>Subject</label>
+					</div>
+
+					<div class="input-group">
+						<textarea rows="5" name="message" required></textarea>
+						<label>Message</label>
+					</div>
+
+					<button type="submit" class="submit-btn">Send Message <i
+							class="fa-solid fa-paper-plane"></i></button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="footer">
+		<h4>About Us</h4>
+		<p>"Your favorite food, delivered fresh—because great taste enhances every moment."</p>
+		<div class="social-icons">
+			<i class="fa-brands fa-facebook"></i>
+			<i class="fa-brands fa-twitter"></i>
+			<i class="fa-brands fa-instagram"></i>
+			<i class="fa-brands fa-linkedin"></i>
+		</div>
+		<p class="copyright">© Copyright 2026 CraveHub</p>
+	</section>
+</body>
+
+</html>

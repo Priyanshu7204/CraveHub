@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Processing Payment | CraveHub</title>
+	
+	<link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+
+	<link rel="stylesheet" th:href="@{/css/RazorpayCheckout.css}">
+	
+	<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+
+	<div class="loader"></div>
+	<h2>Securely Connecting to Razorpay...</h2>
+	<p>Please wait while we open the payment gateway.</p>
+
+	<script th:inline="javascript">
+		const paymentAmount = /*[[${amount}]]*/ '0';
+	</script>
+	
+	<script th:src="@{/JavaScript/RazorpayCheckout.js}"></script>
+
+</body>
+</html>

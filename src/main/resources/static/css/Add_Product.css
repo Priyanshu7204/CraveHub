@@ -1,0 +1,184 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	/* Admin Themed Background - Clean & Professional */
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+		url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100vh;
+	overflow: hidden;
+	color: white;
+}
+
+/* --- Back Button --- */
+.back-btn {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 10px 20px;
+	border-radius: 30px;
+	font-size: 14px;
+	transition: all 0.3s ease;
+	backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-btn:hover {
+	background: crimson;
+	padding-left: 15px;
+	/* Slide effect */
+}
+
+/* --- Main Container --- */
+.main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+/* --- Form Card --- */
+.form-wrapper {
+	background: rgba(30, 30, 30, 0.85);
+	/* Dark Glass */
+	backdrop-filter: blur(15px);
+	width: 450px;
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+.form-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.form-header h2 {
+	font-size: 2rem;
+	margin: 0;
+	color: #00ffcc;
+	/* Cyan/Teal Accent for Admin */
+}
+
+.form-header p {
+	color: #aaa;
+	font-size: 0.9rem;
+	margin-top: 5px;
+}
+
+/* --- Input Groups --- */
+.input-group {
+	margin-bottom: 20px;
+}
+
+.input-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 500;
+	color: #ddd;
+	font-size: 0.95rem;
+}
+
+.input-group label i {
+	margin-right: 8px;
+	color: #00ffcc;
+}
+
+.input-group input,
+.input-group textarea {
+	width: 100%;
+	padding: 12px 15px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	color: white;
+	font-size: 1rem;
+	outline: none;
+	box-sizing: border-box;
+	/* Fix width overflow */
+	transition: all 0.3s ease;
+	font-family: 'Poppins', sans-serif;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: #00ffcc;
+	box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+}
+
+/* Hide Number Arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+	width: 100%;
+	padding: 14px;
+	background: linear-gradient(45deg, #00b09b, #96c93d);
+	/* Green Gradient */
+	border: none;
+	border-radius: 30px;
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	margin-top: 10px;
+}
+
+.submit-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 20px rgba(150, 201, 61, 0.4);
+}
+
+.submit-btn:active {
+	transform: scale(0.98);
+}
+
+.submit-btn i {
+	margin-left: 10px;
+}
+
+/* --- Animations --- */
+.animate-up {
+	animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+	.form-wrapper {
+		width: 90%;
+		padding: 30px 20px;
+	}
+
+	.form-header h2 {
+		font-size: 1.5rem;
+	}
+}

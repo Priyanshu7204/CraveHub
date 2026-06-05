@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Order Food | CraveHub</title>
+    
+    <link rel="icon" type="image/x-icon" th:href="@{/Images/logo.png}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/BuyProduct.css}" />
+</head>
+
+<body>
+    
+    <div class="top-bar">
+        <div class="welcome-text">
+            Welcome Back, <span th:text="${name}">User</span>
+        </div>
+        <a href="/login" class="logout-btn"><i class="fa-solid fa-arrow-left"></i> Logout</a>
+    </div>
+
+    <div class="search-wrapper">
+        <form action="/product/search" method="post" id="searchForm">
+            
+            <div class="input-container">
+                <input type="text" name="productName" id="searchBox" placeholder="Speak or type (e.g. 'Chicken')..." autocomplete="off">
+                <button type="button" class="mic-btn" onclick="startVoiceSearch()" title="Search by Voice">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+            </div>
+            
+            <button type="submit" class="search-btn">Search</button>
+
+        </form>
+        
+        <h3 class="msg-alert" th:if="${msg}" th:text="${msg}"></h3>
+    </div>
+
+    <div th:if="${products}" class="details">
+        <h2 class="section-title">Available Products</h2>
+
+        <form action="" th:action="@{/product/orderAll}" method="post">
+
+            <div class="product-row" th:each="p, stat : ${products}">
+                <div class="product-info">
+                    <strong th:text="${p.pname}">Product Name</strong>
+                    <span>Price: </span>
+                    <span class="price-tag">₹<span th:text="${p.pprice}"></span></span>
+                </div>
+
+                <input type="hidden" th:name="|orders[${stat.index}].oName|" th:value="${p.pname}" />
+                <input type="hidden" th:name="|orders[${stat.index}].oPrice|" th:value="${p.pprice}" />
+
+                <div class="qty-box">
+                    <label>Qty:</label>
+                    <input type="number" th:name="|orders[${stat.index}].oQuantity|" value="0" min="0"
+                        onfocus="if(this.value=='0') this.value='';" 
+                        onblur="if(this.value=='') this.value='0';" />
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" class="order-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Order Selected Items
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <div th:if="${orders!=null}" class="details">
+        <div style="text-align: center;">
+            <h2 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> Your Order History</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Date</th>
+                    <th>Live Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${orders}">
+                    <td th:text="${order.oName}" style="font-weight: 500;"></td>
+                    <td th:text="'₹' + ${order.oPrice}"></td> 
+                    <td th:text="${order.oQuantity}"></td>
+                    <td th:text="'₹' + ${order.totalAmmout}" style="color: crimson; font-weight: bold;"></td>
+                    <td th:text="${#dates.format(order.orderDate, 'dd MMM yyyy')}"></td> 
+                    <td>
+                        <span th:class="${'status-badge ' + order.status.toLowerCase().replace(' ', '-')}" 
+                              th:text="${order.status}"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script th:src="@{/JavaScript/VoiceSearch.js}"></script>
+</body>
+</html>

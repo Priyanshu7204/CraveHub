@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home : CraveHub</title>
+	
+	<link rel="stylesheet" th:href="@{/css/Navigation.css}">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+	<nav th:fragment="navbar()">
+		
+		<a href="/home" class="logo-link">
+			<img th:src="@{/Images/logo.png}" alt="CraveHub" class="logo">
+		</a>
+
+		<div class="nav-center">
+			<form action="/product/search" method="post" class="search-form">
+				<div class="search-box">
+					<i class="fa-solid fa-magnifying-glass search-icon"></i>
+					<input type="text" name="productName" placeholder="Search for Biryani, Paneer...">
+				</div>
+			</form>
+		</div>
+
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/products">Menu</a></li>
+			<li><a href="/location">Locate</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/login" class="login-btn">Log In</a></li>
+		</ul>
+		
+	</nav>
+</body>
+
+</html>
